@@ -57,10 +57,8 @@ console.log('Poprawnie dodany skrypt');
 const showPattern = (sign, num) => {
     const max = 10;
     let pattern = '';
-    if (num > max) {
-        num = max;
-    }
-    for (let i=0; i<num; i++){
+    num > max ? max : num;
+    for (let i=0; i<num; i++) {
         pattern += sign;
         if (i < num - 1) {
             pattern += '-';
