@@ -53,3 +53,26 @@
 console.log('Poprawnie dodany skrypt');
 
  // ******  exercise 1 *******
+
+const showPattern = (sign, num) => {
+    const max = 10;
+    let pattern = '';
+    if (num > max) {
+        num = max;
+    }
+    for (let i=0; i<num; i++){
+        pattern += sign;
+        if (i < num - 1) {
+            pattern += '-';
+        }
+    }
+    return pattern;
+};
+
+// Input: $, 5         Output: $-$-$-$-$
+const result = showPattern('$', 5);
+console.log(result);
+
+// Input: $, 17        Output: $-$-$-$-$-$-$-$-$-$
+const result2 = showPattern('$', 17);
+console.log(result2);
