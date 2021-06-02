@@ -74,3 +74,23 @@ console.log(result);
 // Input: $, 17        Output: $-$-$-$-$-$-$-$-$-$
 const result2 = showPattern('$', 17);
 console.log(result2);
+
+// ******  exercise 6 *******
+
+const showEvenNumbers = array => {
+    return array.filter( el => {
+        return typeof el === 'number' && el % 2 === 0; 
+    })
+};
+
+//  Input: [1, 2, 3, 4, 5, 6, 7]              Output: [2, 4, 6]
+console.log(showEvenNumbers([1, 2, 3, 4, 5, 6, 7]));
+
+// Input: ['Czasem', 12, 'Słońce', 3, 'czasem', 600, 'deszcz'] Output: [12, 600]
+console.log(showEvenNumbers(['Czasem', 12, 'Słońce', 3, 'czasem', 600, 'deszcz']));
+
+//  Input: [{}, {}, [], [], 'abc', 2]           Output: [2]
+console.log(showEvenNumbers([{}, {}, [], [], 'abc', 2]));
+
+// Input: ['a', null, true, undefined, {}, []]        Output: []
+console.log(showEvenNumbers(['a', null, true, undefined, {}, []]));
