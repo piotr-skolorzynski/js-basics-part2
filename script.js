@@ -156,6 +156,24 @@ const szkola = {
 
 // console.log(showObject(szkola));
 
+// ******  exercise 5 *******
+const showLongestString = array => {
+    let longestString = array.reduce( (prev, curr) =>   prev.length >= curr.length ? prev : curr);
+    return longestString;
+};  
+
+//Input:['warzywo', 'ziemianka', 'kot'] Output: 'ziemianka'
+console.log(showLongestString(['warzywo', 'ziemianka', 'kot']));
+
+//Input: ['pies', 'wąż', 'pasikonik'] Output: 'pasikonik'
+console.log(showLongestString(['pies', 'wąż', 'pasikonik']));
+
+//  Input: ['dom', 'oko', 'on'] Output: 'dom'
+console.log(showLongestString(['dom', 'oko', 'on']));
+
+//  Input: ['kamil zadaje', 'super prace domowe']  Output: 'super prace domowe'
+console.log(showLongestString(['kamil zadaje', 'super prace domowe']));
+
 // ******  exercise 6 *******
 
 const showEvenNumbers = array => {
