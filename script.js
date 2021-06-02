@@ -56,8 +56,8 @@ console.log('Poprawnie dodany skrypt');
 
 const showPattern = (sign, num) => {
     const max = 10;
-    let pattern = '';
     num > max ? max : num;
+    let pattern = '';
     for (let i=0; i<num; i++) {
         pattern += sign;
         if (i < num - 1) {
@@ -74,6 +74,76 @@ console.log(result);
 // Input: $, 17        Output: $-$-$-$-$-$-$-$-$-$
 const result2 = showPattern('$', 17);
 console.log(result2);
+
+// ******  exercise 2  *******
+
+const handleNumbers = (num1, operator, num2) => {
+    switch (operator) {
+        case '+':
+            return num1 + num2;
+        case '-':
+            return num1 - num2;
+        case '/':
+            if (num2 === 0) {
+                return 'Nie można dzielić przez zero'
+            } else {
+                return num1 / num2;
+            }
+        case '*':
+            return num1 * num2;
+        default: 
+            return 'Nie znany operator';
+    }
+};
+
+//  Input: 1, '+', 2    Output: 3
+console.log(handleNumbers(1, '+', 2));
+
+// Input: 20, '-', 3   Output: 17
+console.log(handleNumbers(20, '-', 3));
+
+// Input: -1, '*', 8   Output: -8
+console.log(handleNumbers(-1, '*', 8));
+
+//  Input: 4, '/', 2    Output: 2
+console.log(handleNumbers(4, '/', 2));
+
+// Input: 5, '!', 5    Output: Nie znany operator
+console.log(handleNumbers(5, '!', 5));
+
+// Input: 4, '/', 0 Output: Nie można dzielić przez zero
+console.log(handleNumbers(4, '/', 0));
+
+// ******  exercise 4 *******
+
+const szkola = {
+    matematyka: {
+        oceny: [3, 5, 4, 4, 5],
+        imie: 'Mateusz',
+        nazwisko: 'Kowalski'
+    },
+    polski: {
+        oceny: [6, 5, 4, 3, 5],
+        imie: 'Krystyna',
+        nazwisko: 'Ziembińska'
+    },
+    muzyka: {
+        oceny: [6, 6, 4, 6, 5],
+        imie: 'Marian',
+        nazwisko: 'Koniecpolski'
+    }
+}
+
+// const showObject = obj => {
+//     const array = Object.values(obj);
+//     const array2 = array.map( el => {
+        
+//         return `${el}`
+//     })
+//     return array2;
+// };
+
+// console.log(showObject(szkola));
 
 // ******  exercise 6 *******
 
