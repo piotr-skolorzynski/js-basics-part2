@@ -114,6 +114,17 @@ console.log(handleNumbers(5, '!', 5));
 // Input: 4, '/', 0 Output: Nie można dzielić przez zero
 console.log(handleNumbers(4, '/', 0));
 
+// ******  exercise 3 *******
+const starsLoop = counter => {
+    let result = '';
+    for (let i=0; i < counter; i++) {
+        result += '* ';
+        console.log(result);
+    }
+}
+
+starsLoop(5);
+
 // ******  exercise 4 *******
 
 const szkola = {
