@@ -46,7 +46,7 @@
 
  */
 
-// ************************************ solutions ************************************************************************
+// ****************************** solutions *******************************
 
  // ******  exercise 0 *******
 
@@ -145,16 +145,17 @@ const szkola = {
     }
 }
 
-// const showObject = obj => {
-//     const array = Object.values(obj);
-//     const array2 = array.map( el => {
-        
-//         return `${el}`
-//     })
-//     return array2;
-// };
-
-// console.log(showObject(szkola));
+const showObject = obj => {
+    const keyArray = Object.keys(obj)
+    console.log(keyArray)
+    const objArray = Object.values(obj);
+    console.log(objArray)
+    for (let i=0; i<keyArray.length; i++) {
+        const string = keyArray[i].toString().padEnd(keyArray[i].length + 1, ',').concat(Object.values(objArray[i]).toString());
+        console.log(string);
+    }
+};
+const showObj = showObject(szkola);
 
 // ******  exercise 5 *******
 const showLongestString = array => {
@@ -182,7 +183,7 @@ const showEvenNumbers = array => {
     })
 };
 
-//  Input: [1, 2, 3, 4, 5, 6, 7]              Output: [2, 4, 6]
+//  Input: [1, 2, 3, 4, 5, 6, 7]      Output: [2, 4, 6]
 console.log(showEvenNumbers([1, 2, 3, 4, 5, 6, 7]));
 
 // Input: ['Czasem', 12, 'Słońce', 3, 'czasem', 600, 'deszcz'] Output: [12, 600]
@@ -193,3 +194,19 @@ console.log(showEvenNumbers([{}, {}, [], [], 'abc', 2]));
 
 // Input: ['a', null, true, undefined, {}, []]        Output: []
 console.log(showEvenNumbers(['a', null, true, undefined, {}, []]));
+
+// ******  exercise 7 *******
+
+const capitalizeWords = string => {
+    const wordsArray = string.split(' ');
+    console.log(wordsArray);
+    const capWords = wordsArray.forEach(word => word.substring(0,1).toUpperCase().concat(word.slice(1)));
+    console.log(capWords);
+    // let capString = capWords.forEach(word => {
+    //     let sentence = '';
+    //     return sentence +=word;
+    // })
+    // return capString;
+};
+
+console.log(capitalizeWords('ale super zadanie'));
