@@ -198,15 +198,22 @@ console.log(showEvenNumbers(['a', null, true, undefined, {}, []]));
 // ******  exercise 7 *******
 
 const capitalizeWords = string => {
-    const wordsArray = string.split(' ');
-    console.log(wordsArray);
-    const capWords = wordsArray.forEach(word => word.substring(0,1).toUpperCase().concat(word.slice(1)));
-    console.log(capWords);
-    // let capString = capWords.forEach(word => {
-    //     let sentence = '';
-    //     return sentence +=word;
-    // })
-    // return capString;
+    const wordsArray = string.split(' ').map(word => word.substring(0,1).toUpperCase().concat(word.slice(1))); 
+    let sentence = '';
+    for (let i=0; i<wordsArray.length; i++) {
+        sentence += ` ${wordsArray[i]}`;
+    }
+    return sentence.trimStart();
 };
 
-console.log(capitalizeWords('ale super zadanie'));
+//Input: 'ale super zadanie'  Output: 'Ale Super Zadanie'
+const capSentence = capitalizeWords('ale super zadanie');
+console.log(capSentence);
+
+//Input: 'uwielbiam javascript' Output:'Uwielbiam Javascript'
+const capSentence2 = capitalizeWords('uwielbiam javascript');
+console.log(capSentence2);
+
+//Input: 'koty, mewy i sroki' Output: 'Koty, Mewy I Sroki'
+const capSentence3 = capitalizeWords('koty, mewy i sroki');
+console.log(capSentence3);
