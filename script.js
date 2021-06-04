@@ -147,15 +147,18 @@ const szkola = {
 
 const showObject = obj => {
     const keyArray = Object.keys(obj)
-    console.log(keyArray)
     const objArray = Object.values(obj);
-    console.log(objArray)
     for (let i=0; i<keyArray.length; i++) {
-        const string = keyArray[i].toString().padEnd(keyArray[i].length + 1, ',').concat(Object.values(objArray[i]).toString());
-        console.log(string);
+        let string = '';
+        const eachObjString = Object.values(objArray[i]).toString().split(',');
+        for (const el of eachObjString) {
+            string += ` ${el}`;
+        }
+        const sentence = `${keyArray[i].toString()}:${string}`;
+        console.log(sentence);
     }
 };
-const showObj = showObject(szkola);
+showObject(szkola);
 
 // ******  exercise 5 *******
 const showLongestString = array => {
