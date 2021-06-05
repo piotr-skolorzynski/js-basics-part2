@@ -149,12 +149,8 @@ const showObject = obj => {
     const keyArray = Object.keys(obj)
     const objArray = Object.values(obj);
     for (let i=0; i<keyArray.length; i++) {
-        let string = '';
         const eachObjString = Object.values(objArray[i]).toString().split(',');
-        for (const el of eachObjString) {
-            string += ` ${el}`;
-        }
-        const sentence = `${keyArray[i].toString()}:${string}`;
+        const sentence = `${keyArray[i].toString()}: ${eachObjString.join(' ')}`;
         console.log(sentence);
     }
 };
@@ -201,12 +197,8 @@ console.log(showEvenNumbers(['a', null, true, undefined, {}, []]));
 // ******  exercise 7 *******
 
 const capitalizeWords = string => {
-    const wordsArray = string.split(' ').map(word => word.substring(0,1).toUpperCase().concat(word.slice(1))); 
-    let sentence = '';
-    for (let i=0; i<wordsArray.length; i++) {
-        sentence += ` ${wordsArray[i]}`;
-    }
-    return sentence.trimStart();
+    const wordsArray = string.split(' ').map(word => word.substring(0,1).toUpperCase().concat(word.slice(1))).join(' '); 
+    return wordsArray;
 };
 
 //Input: 'ale super zadanie'  Output: 'Ale Super Zadanie'
