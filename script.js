@@ -65,6 +65,9 @@ const showPattern = (sign, num) => {
         }
     }
     return pattern;
+
+    /* propozycja Bartosza Cytrowskiego */
+    /* return sign.repeat(Math.min(num, max)).split('').join('-'); */
 };
 
 // Input: $, 5         Output: $-$-$-$-$
@@ -94,6 +97,16 @@ const handleNumbers = (num1, operator, num2) => {
         default: 
             return 'Nie znany operator';
     }
+
+    /* Propozycja Bartosza Cytrowskiego z wykorzystaniem obiektu */
+
+    /* const operations = {
+        '+': (a, b) => a + b,
+        '-': (a, b) => a - b,
+        '/': (a, b) => b === 0 ? 'Nie można dzielić przez zero' : a / b,
+        '*': (a, b) => a * b,
+    }
+    return (operations[operator] || (() => 'Nie znany operator'))(num1, num2); */
 };
 
 //  Input: 1, '+', 2    Output: 3
@@ -153,6 +166,13 @@ const showObject = obj => {
         const sentence = `${keyArray[i].toString()}: ${eachObjString.join(' ')}`;
         console.log(sentence);
     }
+    /* Poniżej propozycja Bartosza Cytrowskiego
+        Zamiast rozbierać obiekt na poszczególne klucze i wartości wykorzystane w jednej tablicy par klucz-wartość dzięki Object.entries a dopiero póżniej poszczególne wartości rozebrane przez Object.values
+        Chociaż na swoje usprawiedliwienie mogę powiedzieć, że bardzo chciałem wyświetlić liczby bez przecinków ;) */
+
+    /* Object.entries(obj).forEach(([key, value]) => {
+        console.log(`${key}: ${Object.values(value).join(' ')}`)
+    }); */
 };
 showObject(szkola);
 
